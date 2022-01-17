@@ -1,50 +1,18 @@
-import 'package:business_module/business_module.dart';
-import 'package:business_module/dogs_state/dogs_state.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
+import 'package:flutter_architecture/screens/home_screen/widgets/dogs_list.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
-  final DogsCubit _dogsCubit = GetIt.I.get<DogsCubit>();
+  final appBarText = 'Flutter clean architecture';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter clean architecture'),
+        title: Text(appBarText),
       ),
-      body: BlocProvider(
-        create: (context) => _dogsCubit,
-        child: BlocBuilder<DogsCubit, DogsState>(
-          builder: (context, state) {
-            final dogsData = state.dogs;
-
-            return ListView.builder(
-              itemCount: dogsData.length,
-              itemBuilder: (context, index) {
-                final dogData = state.dogs[index];
-
-                return Card(
-                  child: ListTile(
-                    leading: Text((index + 1).toString()),
-                    title: Text(dogData.name),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // Text('Порода: ${dogData.breed.toLowerCase()}'),
-                        Text('Пол: ${dogData.sex.toLowerCase()}'),
-                      ],
-                    ),
-                    trailing: Text(dogData.age.toString()),
-                  ),
-                );
-              },
-            );
-          },
-        ),
-      ),
+      body: DogsListWidget(),
     );
   }
 }
