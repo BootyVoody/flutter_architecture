@@ -1,7 +1,7 @@
-import 'package:data_module/models/animal/extends/dog.dart';
 import 'package:injectable/injectable.dart';
+import 'package:model_module/model_module.dart';
 
 @LazySingleton()
 class DogsService {
-  List<Dog> get getDogs => Dog.dogsData;
+  List<DogData> get getDogs => DogData.dogsData;
 }

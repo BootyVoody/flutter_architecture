@@ -1,7 +1,7 @@
-import 'package:data_module/data_module.dart';
+import 'package:model_module/model_module.dart';
 
 class DogsState {
-  final List<Dog> dogs;
+  final List<DogData> dogs;
 
   DogsState({required this.dogs});
 }

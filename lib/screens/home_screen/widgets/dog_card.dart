@@ -33,6 +33,5 @@ class DogCardWidget extends StatelessWidget {
         trailing: Text(dogData.age.toString()),
       ),
     );
-    ;
   }
 }

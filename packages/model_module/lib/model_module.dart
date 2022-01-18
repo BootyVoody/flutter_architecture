@@ -1,0 +1,1 @@
+export 'package:model_module/models/dog/dog_data.dart';

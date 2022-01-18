@@ -1,29 +1,30 @@
-import 'package:data_module/models/animal/animal.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class Dog extends Animal {
-  final String breed;
+part 'dog_data.freezed.dart';
 
-  Dog({
+@freezed
+class DogData with _$DogData {
+  const factory DogData({
     required String name,
     required double age,
     required String sex,
-    required this.breed,
-  }) : super(name: name, age: age, sex: sex);
+    required String breed,
+  }) = _DogData;
 
-  static final List<Dog> dogsData = [
-    Dog(
+  static final List<DogData> dogsData = [
+    const DogData(
       name: 'Тотошка',
       age: 12,
       sex: 'Девочка',
       breed: 'Такса',
     ),
-    Dog(
+    const DogData(
       name: 'Арчи',
       age: 0.9,
       sex: 'Мальчик',
       breed: 'Такса',
     ),
-    Dog(
+    const DogData(
       name: 'Люси',
       age: 0.9,
       sex: 'Девочка',
