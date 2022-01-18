@@ -11,10 +11,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  business_module:
-    path: packages/business_module
   flutter_bloc: ^8.0.1
   get_it: ^7.2.0
+  model_module:
+    path: packages/model_module
+  business_module:
+    path: packages/business_module
 
 dev_dependencies:
   flutter_test:

@@ -12,15 +12,15 @@ class DogsListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => _dogsCubit,
+      create: (_) => _dogsCubit,
       child: BlocBuilder<DogsCubit, DogsState>(
         builder: (context, state) {
           final dogsDataCount = state.dogs.length;
 
           return ListView.builder(
             itemCount: dogsDataCount,
-            itemBuilder: (context, currentIndex) => DogCardWidget(
-              currentIndex: currentIndex,
+            itemBuilder: (_, currentDogIndex) => DogCardWidget(
+              currentDogIndex: currentDogIndex,
               state: state,
             ),
           );

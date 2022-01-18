@@ -2,36 +2,60 @@ import 'package:business_module/business_module.dart';
 import 'package:flutter/material.dart';
 
 class DogCardWidget extends StatelessWidget {
+  final int currentDogIndex;
+  final DogsState state;
+
   const DogCardWidget({
     Key? key,
-    required this.currentIndex,
+    required this.currentDogIndex,
     required this.state,
   }) : super(key: key);
 
-  final int currentIndex;
-  final DogsState state;
-
   @override
   Widget build(BuildContext context) {
-    final dogData = state.dogs[currentIndex];
+    final dogData = state.dogs[currentDogIndex];
+    const nextDogIndex = 1;
 
     return Card(
       child: ListTile(
-        leading: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text((currentIndex + 1).toString()),
-          ],
+        leading: _dogCardLeading(
+          currentDogIndex: currentDogIndex,
+          nextDogIndex: nextDogIndex,
         ),
-        title: Text(dogData.name),
-        subtitle: Row(
-          children: [
-            Text('Порода: ${dogData.breed.toLowerCase()}, '),
-            Text('пол: ${dogData.sex.toLowerCase()}'),
-          ],
-        ),
-        trailing: Text(dogData.age.toString()),
+        title: _dogCardTitle(dogName: dogData.name),
+        subtitle:
+            _dogCardSubtitle(dogBreed: dogData.breed, dogSex: dogData.sex),
+        trailing: _dogCardTrailing(dogAge: dogData.age),
       ),
     );
+  }
+
+  Widget _dogCardLeading({
+    required int currentDogIndex,
+    required int nextDogIndex,
+  }) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text((currentDogIndex + nextDogIndex).toString()),
+      ],
+    );
+  }
+
+  Widget _dogCardTitle({required String dogName}) {
+    return Text(dogName);
+  }
+
+  Widget _dogCardSubtitle({required String dogBreed, required String dogSex}) {
+    return Row(
+      children: [
+        Text('Порода: ${dogBreed.toLowerCase()}, '),
+        Text('пол: ${dogSex.toLowerCase()}'),
+      ],
+    );
+  }
+
+  Widget _dogCardTrailing({required double dogAge}) {
+    return Text(dogAge.toString());
   }
 }
