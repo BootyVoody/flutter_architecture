@@ -17,13 +17,16 @@ dependencies:
     path: packages/model_module
   business_module:
     path: packages/business_module
-  codegen_module:
-    path:  packages/codegen_module
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.0
+  dart_code_metrics: ^4.9.1
+  codegen_module:
+    path: packages/codegen_module
+  analyzer_module:
+    path: packages/analyzer_module
 
 flutter:
   uses-material-design: true

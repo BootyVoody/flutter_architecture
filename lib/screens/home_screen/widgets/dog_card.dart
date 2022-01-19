@@ -33,29 +33,23 @@ class DogCardWidget extends StatelessWidget {
   Widget _dogCardLeading({
     required int currentDogIndex,
     required int nextDogIndex,
-  }) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text((currentDogIndex + nextDogIndex).toString()),
-      ],
-    );
-  }
+  }) =>
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text((currentDogIndex + nextDogIndex).toString()),
+        ],
+      );
 
-  Widget _dogCardTitle({required String dogName}) {
-    return Text(dogName);
-  }
+  Widget _dogCardTitle({required String dogName}) => Text(dogName);
 
-  Widget _dogCardSubtitle({required String dogBreed, required String dogSex}) {
-    return Row(
-      children: [
-        Text('Порода: ${dogBreed.toLowerCase()}, '),
-        Text('пол: ${dogSex.toLowerCase()}'),
-      ],
-    );
-  }
+  Widget _dogCardSubtitle({required String dogBreed, required String dogSex}) =>
+      Row(
+        children: [
+          Text('Порода: ${dogBreed.toLowerCase()}, '),
+          Text('пол: ${dogSex.toLowerCase()}'),
+        ],
+      );
 
-  Widget _dogCardTrailing({required double dogAge}) {
-    return Text(dogAge.toString());
-  }
+  Widget _dogCardTrailing({required double dogAge}) => Text(dogAge.toString());
 }

@@ -20,5 +20,8 @@ dev_dependencies:
   flutter_lints: ^1.0.0
   injectable_generator: ^1.5.3
   build_runner: ^2.1.7
+  dart_code_metrics: ^4.9.1
+  analyzer_module:
+    path: ../analyzer_module
 
 flutter:

@@ -9,8 +9,6 @@ class DogsCubit extends Cubit<DogsState> {
 
   DogsCubit({required this.dogsService})
       : super(
-          DogsState(
-            dogs: dogsService.getDogs,
-          ),
+          DogsState(dogs: dogsService.getDogs),
         );
 }

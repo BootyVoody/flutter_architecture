@@ -7,12 +7,10 @@ class HomeScreen extends StatelessWidget {
   final appBarText = 'Flutter clean architecture';
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(appBarText),
-      ),
-      body: DogsListWidget(),
-    );
-  }
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: Text(appBarText),
+        ),
+        body: DogsListWidget(),
+      );
 }

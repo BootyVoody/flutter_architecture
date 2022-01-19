@@ -10,22 +10,20 @@ class DogsListWidget extends StatelessWidget {
   final _dogsCubit = GetIt.I.get<DogsCubit>();
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => _dogsCubit,
-      child: BlocBuilder<DogsCubit, DogsState>(
-        builder: (context, state) {
-          final dogsDataCount = state.dogs.length;
+  Widget build(BuildContext context) => BlocProvider(
+        create: (_) => _dogsCubit,
+        child: BlocBuilder<DogsCubit, DogsState>(
+          builder: (context, state) {
+            final dogsDataCount = state.dogs.length;
 
-          return ListView.builder(
-            itemCount: dogsDataCount,
-            itemBuilder: (_, currentDogIndex) => DogCardWidget(
-              currentDogIndex: currentDogIndex,
-              state: state,
-            ),
-          );
-        },
-      ),
-    );
-  }
+            return ListView.builder(
+              itemCount: dogsDataCount,
+              itemBuilder: (_, currentDogIndex) => DogCardWidget(
+                currentDogIndex: currentDogIndex,
+                state: state,
+              ),
+            );
+          },
+        ),
+      );
 }
