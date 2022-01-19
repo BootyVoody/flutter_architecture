@@ -11,6 +11,7 @@ Future<void> main(List<String> args) async {
     try {
       varNumber = int.parse(args[0]);
     } on FormatException {
+      // ignore: avoid_print
       print('Parametr should contain number');
       exit(0);
     }

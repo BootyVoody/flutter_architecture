@@ -22,6 +22,7 @@ class EnvironmentVariables {
   """;
 
   void run({required int varNumber}) {
+    // ignore: avoid_print
     print('Generation is started');
 
     final outputFile = path.join(Directory.current.path, 'lib/$_kOutput');
@@ -39,6 +40,7 @@ class EnvironmentVariables {
     final formattedCode = DartFormatter().format(output.toString());
 
     File(outputFile).writeAsStringSync(formattedCode);
+    // ignore: avoid_print
     print('Generation is finished');
   }
 }
