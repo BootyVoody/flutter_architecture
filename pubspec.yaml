@@ -17,6 +17,8 @@ dependencies:
     path: packages/model_module
   business_module:
     path: packages/business_module
+  codegen_module:
+    path:  packages/codegen_module
 
 dev_dependencies:
   flutter_test:
